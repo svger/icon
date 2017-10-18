@@ -1,0 +1,56 @@
+//
+// variables
+// ===========================
+@imageUrl:                    '../style/images/';
+@img-height:                  .24rem;
+@cell-img-height:             @img-height - .02rem;
+@home-img-height:             @img-height + .04rem;
+
+//
+// functions
+// ===========================
+.resize(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.setImage(@width, @url, @position-x:center, @position-y:center) {
+  background: url(@url) no-repeat;
+  background-size: @width auto;
+  background-position: @position-x @position-y;
+}
+
+.setIconImage(@width, @height, @url) {
+  .resize(@width + .04rem, @height + .04rem);
+  .setImage(@width, @url);
+}
+
+
+//
+// styles
+// ===========================
+
+.container {
+  display: block;
+}
+
+.icon-inline {
+  display: inline-block;
+}
+
+
+.icon-header-back {
+  .setIconImage(@img-height, @img-height, "@{imageUrl}return.png");
+}
+
+.icon-reload {
+  .setIconImage(@img-height, @img-height, "@{imageUrl}reload.png");
+}
+
+.icon-openInterest {
+  .setIconImage(@img-height, @img-height, "@{imageUrl}openInterest.png");
+}
+
+.icon-header-search {
+  .setIconImage(@img-height, @img-height, "@{imageUrl}header-search.png");
+}
