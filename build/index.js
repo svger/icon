@@ -10,17 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactCssModules = require('react-css-modules');
-
-var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _index = require('./style/index.less');
+var _propTypes = require('prop-types');
 
-var _index2 = _interopRequireDefault(_index);
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32,6 +28,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+require('./style/index.less');
+var defaultPrefixCls = 'cefc-icon';
+
 var Icon = function (_Component) {
   _inherits(Icon, _Component);
 
@@ -40,6 +39,10 @@ var Icon = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this, props, context));
 
+    _this.handleClick = function () {
+      _this.props.onClick && _this.props.onClick();
+    };
+
     _this.state = {};
     return _this;
   }
@@ -47,19 +50,16 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'render',
     value: function render() {
-      var _classNames;
+      var _cns;
 
       var _props = this.props,
           type = _props.type,
-          _props$className = _props.className,
-          className = _props$className === undefined ? '' : _props$className,
+          prefix = _props.prefix,
           inline = _props.inline;
 
-      var classString = (0, _classnames2.default)((_classNames = {
-        container: true
-      }, _defineProperty(_classNames, 'icon-inline', !!inline), _defineProperty(_classNames, 'icon-' + type, true), _classNames));
+      var classString = (0, _classnames2.default)((_cns = {}, _defineProperty(_cns, '' + prefix, true), _defineProperty(_cns, prefix + '-ds-inline', !!inline), _defineProperty(_cns, prefix + '-type-' + type, true), _cns));
 
-      return _react2.default.createElement('i', { styleName: classString, onClick: this.props.onClick, className: className });
+      return _react2.default.createElement('i', { key: type, onClick: this.handleClick, className: classString, onKeyUp: function onKeyUp() {} });
     }
   }]);
 
@@ -67,11 +67,12 @@ var Icon = function (_Component) {
 }(_react.Component);
 
 Icon.propTypes = {
-  type: _react.PropTypes.string.isRequired, //图片类型
-  onClick: _react.PropTypes.func,
-  inline: _react.PropTypes.bool,
-  className: _react.PropTypes.string
+  prefix: _propTypes2.default.string,
+  type: _propTypes2.default.string.isRequired, //图片类型
+  onClick: _propTypes2.default.func,
+  inline: _propTypes2.default.bool
 };
-exports.default = (0, _reactCssModules2.default)(Icon, _index2.default, {
-  allowMultiple: true
-});
+Icon.defaultProps = {
+  prefix: defaultPrefixCls
+};
+exports.default = Icon;
