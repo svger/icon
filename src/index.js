@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import cns from 'classnames';
 import PropTypes from 'prop-types';
-
 require('./style/index.less');
+
 const defaultPrefixCls = 'cefc-icon';
 
 class Icon extends Component {

@@ -29,6 +29,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 require('./style/index.less');
+
 var defaultPrefixCls = 'cefc-icon';
 
 var Icon = function (_Component) {
@@ -55,11 +56,13 @@ var Icon = function (_Component) {
       var _props = this.props,
           type = _props.type,
           prefix = _props.prefix,
-          inline = _props.inline;
+          className = _props.className,
+          inline = _props.inline,
+          style = _props.style;
 
-      var classString = (0, _classnames2.default)((_cns = {}, _defineProperty(_cns, '' + prefix, true), _defineProperty(_cns, prefix + '-ds-inline', !!inline), _defineProperty(_cns, prefix + '-type-' + type, true), _cns));
+      var classString = (0, _classnames2.default)((_cns = {}, _defineProperty(_cns, '' + prefix, true), _defineProperty(_cns, prefix + '-ds-inline', !!inline), _defineProperty(_cns, prefix + '-' + type, true), _cns), className);
 
-      return _react2.default.createElement('i', { key: type, onClick: this.handleClick, className: classString, onKeyUp: function onKeyUp() {} });
+      return _react2.default.createElement('i', { key: type, style: style, onClick: this.handleClick, className: classString, onKeyUp: function onKeyUp() {} });
     }
   }]);
 
@@ -70,9 +73,12 @@ Icon.propTypes = {
   prefix: _propTypes2.default.string,
   type: _propTypes2.default.string.isRequired, //图片类型
   onClick: _propTypes2.default.func,
-  inline: _propTypes2.default.bool
+  inline: _propTypes2.default.bool,
+  className: _propTypes2.default.string,
+  style: _propTypes2.default.object
 };
 Icon.defaultProps = {
-  prefix: defaultPrefixCls
+  prefix: defaultPrefixCls,
+  className: ''
 };
 exports.default = Icon;

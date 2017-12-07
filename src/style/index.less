@@ -1,104 +1,34 @@
 @import '../../node_modules/cefc-ui-style/src/mixins/utils.less';
 @import '../../@{theme}';
+@import './style.css';
 
-//
-// variables
-// ===========================
-@imageUrl:                    '../style/images/';
-@img-height:                  .24rem;
-@cell-img-height:             @img-height - .02rem;
-@home-img-height:             @img-height + .04rem;
-@cellPrefixCls: cefc-icon;
+@iconPrefixCls: cefc-icon;
 
-//
-// functions
-// ===========================
-.resize(@width, @height) {
-  width: @width;
-  height: @height;
-}
+.@{iconPrefixCls} {
 
-.setImage(@width, @url, @position-x:center, @position-y:center) {
-  background: url(@url) no-repeat;
-  background-size: @width auto;
-  background-position: @position-x @position-y;
-}
-
-.setIconImage(@width, @height, @url) {
-  .resize(@width + .04rem, @height + .04rem);
-  .setImage(@width, @url);
-}
-
-
-//
-// styles
-// ===========================
-
-.@{cellPrefixCls} {
-  display: block;
-
-  &-ds-inline {
-    display: inline-block;
+  &-down:before {
+    content: "\e90e";
+    color: #8a8a8a;
   }
 
-  &-checked {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}checked.png");
+  &-plus-circle-o:before {
+    content: "\e90f";
+    color: #bfbfbf;
   }
 
-  &-close-circle {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}close-circle.png");
+  &-plus:before {
+    content: "\e910";
+    color: #707070;
   }
 
-  &-down {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}down.png");
+  &-right:before {
+    content: "\e911";
+    color: #8a8a8a;
   }
 
-  &-down-s {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}down-s.png");
-  }
-
-  &-exclamation-circle {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}exclamation-circle.png");
-  }
-
-  &-left-circle {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}left-circle.png");
-  }
-
-  &-loading {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}loading.png");
-  }
-
-  &-minus-circle {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}minus-circle.png");
-  }
-
-  &-right {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}right.png");
-  }
-
-  &-search {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}search.png");
-  }
-
-  &-up {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}up.png");
-  }
-
-  &-up-s {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}up-s.png");
-  }
-
-  &-plus-circle {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}plus-circle.png");
-  }
-
-  &-reload {
-    .setIconImage(@img-height, @img-height, "@{imageUrl}reload.png");
-  }
-
-  &-close {
-    .setIconImage(.22rem, .22rem, "@{imageUrl}close.png");
+  &-up:before {
+    content: "\e912";
+    color: #8a8a8a;
   }
 }
 
