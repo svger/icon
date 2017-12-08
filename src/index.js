@@ -3,22 +3,16 @@
 import React, { Component } from 'react';
 import cns from 'classnames';
 import PropTypes from 'prop-types';
-require('./style/index.less');
-
-const defaultPrefixCls = 'cefc-icon';
+import "./style/index.less";
 
 class Icon extends Component {
   static propTypes = {
-    prefix: PropTypes.string,
-    type: PropTypes.string.isRequired,  //图片类型
+    type: PropTypes.string.isRequired,  //icon类型
     onClick: PropTypes.func,
-    inline: PropTypes.bool,
     className: PropTypes.string,
-    style: PropTypes.object,
   }
 
   static defaultProps = {
-    prefix: defaultPrefixCls,
     className: ''
   }
 
@@ -32,14 +26,13 @@ class Icon extends Component {
   }
 
   render() {
-    const { type, prefix, className, inline, style } = this.props;
+    const { type, className } = this.props;
     const classString = cns({
-      [`${prefix}`]: true,
-      [`${prefix}-ds-inline`]: !!inline,
-      [`${prefix}-${type}`]: true
+      'iconfont': true,
+      [`${type}`]: true
     }, className);
 
-    return <i key={type} style={style} onClick={this.handleClick} className={classString} onKeyUp={() => {}} />
+    return <i onClick={this.handleClick} className={classString} />
   }
 }
 

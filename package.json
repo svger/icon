@@ -21,10 +21,11 @@
     "gulp-replace": "^0.6.1",
     "prop-types": "~15.6.0",
     "react": "~16.1.1",
-    "react-dom": "~16.1.1"
+    "react-dom": "~16.1.1",
+    "url-loader": "^0.6.2"
   },
   "devDependencies": {
-    "cefc-tools": "~0.0.4"
+    "cefc-tools": "^0.0.5"
   },
   "theme": "node_modules/cefc-ui-style/src/themes/default.less"
 }
