@@ -1,6 +1,6 @@
 {
   "name": "cefc-ui-icon",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CEFC-UI-ICON",
   "main": "build/index.js",
   "scripts": {
