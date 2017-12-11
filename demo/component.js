@@ -25,11 +25,11 @@ class App extends React.Component {
          <ul>
            <li>
              <Icon type="icon-setup" className="biggerIcon"/>
-             <span>icon-setup</span>
+             <span>setup</span>
            </li>
            <li>
              <Icon type="icon-empty" className="color-red"/>
-             <span>icon-empty</span>
+             <span>empty</span>
            </li>
          </ul>
        </div>

@@ -2,7 +2,7 @@
   "name": "cefc-ui-icon",
   "version": "0.0.7",
   "description": "CEFC-UI-ICON",
-  "main": "build/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "node_modules/.bin/tools run build",
     "server": "node_modules/.bin/tools run server",

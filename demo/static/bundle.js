@@ -5464,7 +5464,7 @@ var App = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
-              'icon-setup'
+              'setup'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5474,7 +5474,7 @@ var App = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
-              'icon-empty'
+              'empty'
             )
           )
         )
