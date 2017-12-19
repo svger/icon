@@ -5426,7 +5426,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'icon-add' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'add', color: 'blue', size: 'lg' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
@@ -5436,7 +5436,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'icon-close' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'close', size: 'md' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
@@ -5446,7 +5446,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'icon-search' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'search', size: 'sm' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
@@ -5460,7 +5460,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'icon-setup', className: 'biggerIcon' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'setup', className: 'biggerIcon', color: 'blue' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
@@ -5470,7 +5470,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'icon-empty', className: 'color-red' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'empty', className: 'color-red' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'span',
               null,
@@ -5500,8 +5500,6 @@ var App = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_index_less__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_index_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__style_index_less__);
-
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -5520,29 +5518,36 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Icon = function (_Component) {
   _inherits(Icon, _Component);
 
-  function Icon(props, context) {
+  function Icon() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Icon);
 
-    var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this, props, context));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.handleClick = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Icon.__proto__ || Object.getPrototypeOf(Icon)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function () {
       _this.props.onClick && _this.props.onClick();
-    };
-
-    _this.state = {};
-    return _this;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Icon, [{
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props,
           type = _props.type,
-          className = _props.className;
+          className = _props.className,
+          color = _props.color,
+          size = _props.size;
 
-      var classString = __WEBPACK_IMPORTED_MODULE_1_classnames___default()(_defineProperty({
+      var classString = __WEBPACK_IMPORTED_MODULE_1_classnames___default()((_classnames = {
         'iconfont': true
-      }, '' + type, true), className);
+      }, _defineProperty(_classnames, 'cefc-icon-' + type, true), _defineProperty(_classnames, 'cefc-icon-blue', color === 'blue'), _defineProperty(_classnames, 'cefc-icon-white', color === 'white'), _defineProperty(_classnames, 'cefc-icon-sm', size === 'sm'), _defineProperty(_classnames, 'cefc-icon-md', size === 'md'), _defineProperty(_classnames, 'cefc-icon-lg', size === 'lg'), _classnames), className);
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { onClick: this.handleClick, className: classString });
     }
@@ -5554,10 +5559,14 @@ var Icon = function (_Component) {
 Icon.propTypes = {
   type: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired, //icon类型
   onClick: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.func,
+  color: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['blue', 'white']),
+  size: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['sm', 'md', 'lg']),
   className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string
 };
 Icon.defaultProps = {
-  className: ''
+  className: '',
+  color: 'blue',
+  size: 'md'
 };
 
 
@@ -6205,10 +6214,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(32)();
 // imports
-exports.push([module.i, "@import url(//at.alicdn.com/t/font_501801_7x942tx1vk2r19k9.css);", ""]);
+exports.push([module.i, "@import url(//at.alicdn.com/t/font_501801_05e3slvbzo0kvs4i.css);", ""]);
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".cefc-icon-blue{color:#45a6ec}.cefc-icon-white{color:#fff}.cefc-icon-sm{font-size:.28rem}.cefc-icon-md{font-size:.3rem}.cefc-icon-lg{font-size:.32rem}", ""]);
 
 // exports
 

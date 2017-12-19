@@ -10,25 +10,25 @@ class App extends React.Component {
 
          <ul>
            <li>
-             <Icon type="icon-add" />
+             <Icon type="add" color="blue" size="lg" />
              <span>add</span>
            </li>
            <li>
-             <Icon type="icon-close" />
+             <Icon type="close" size="md"/>
              <span>close</span>
            </li>
            <li>
-             <Icon type="icon-search" />
+             <Icon type="search" size="sm"/>
              <span>search</span>
            </li>
          </ul>
          <ul>
            <li>
-             <Icon type="icon-setup" className="biggerIcon"/>
+             <Icon type="setup" className="biggerIcon" color="blue"/>
              <span>setup</span>
            </li>
            <li>
-             <Icon type="icon-empty" className="color-red"/>
+             <Icon type="empty" className="color-red"/>
              <span>empty</span>
            </li>
          </ul>
