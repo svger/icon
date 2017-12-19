@@ -15,11 +15,8 @@ class Icon extends Component {
   static defaultProps = {
     className: '',
     color: 'blue',
-    size: 'md'
-  }
-
-  handleClick = () => {
-    this.props.onClick && this.props.onClick();
+    size: 'md',
+    onClick: ()=>{}
   }
 
   render() {
@@ -34,7 +31,7 @@ class Icon extends Component {
       [`cefc-icon-lg`]: size === 'lg',
     }, className);
 
-    return <i onClick={this.handleClick} className={classString}/>
+    return <i onClick={this.props.onClick} className={classString}/>
   }
 }
 

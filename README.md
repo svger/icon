@@ -13,6 +13,7 @@
 |className|外部传入类，用来补充定义样式，可以改变图标的大小，颜色等|string|无|
 |color|常用的图标颜色，目前有blue和white两个值|string|blue|
 |size|常用的图标大小|目前有sm,md,lg三个值|string|md|
+|onClick|点击图标的回调函数|func|()=>{}|
 
 ## 如何使用
 使用 `<Icon />` 标签声明组件，指定图标对应的 type 属性，示例代码如下:
