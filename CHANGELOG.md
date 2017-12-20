@@ -19,3 +19,6 @@
 ### 2017-12-18
 * 加入color、size属性，方便定义样式。
 * 增加默认onClick属性
+
+### 2016-12-20
+* 将cefc-icon-delete 更改为 cefc-icon-error 命名
