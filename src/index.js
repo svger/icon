@@ -1,37 +1,36 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import "./style/index.less";
+import './style/index.less';
 
 class Icon extends Component {
   static propTypes = {
+    prefixCls: PropTypes.string,        //样式前缀
     type: PropTypes.string.isRequired,  //icon类型
     onClick: PropTypes.func,
     color: PropTypes.oneOf(['blue', 'white']),
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
-    className: PropTypes.string,
+    className: PropTypes.string,        //外部传入类
   }
 
   static defaultProps = {
+    prefixCls: 'cefc-icon',
     className: '',
     color: 'blue',
     size: 'md',
-    onClick: ()=>{}
+    onClick: () => {}
   }
 
   render() {
-    const { type, className, color, size } = this.props;
+    const { type, className, color, size, prefixCls } = this.props;
     const classString = classnames({
       'iconfont': true,
-      [`cefc-icon-${type}`]: true,
-      [`cefc-icon-blue`]: color === 'blue',
-      [`cefc-icon-white`]: color === 'white',
-      [`cefc-icon-sm`]: size === 'sm',
-      [`cefc-icon-md`]: size === 'md',
-      [`cefc-icon-lg`]: size === 'lg',
+      [`${prefixCls}-${type}`]: true,
+      [`${prefixCls}-${color}`]: true,
+      [`${prefixCls}-${size}`]: true
     }, className);
 
-    return <i onClick={this.props.onClick} className={classString}/>
+    return <i onClick={this.props.onClick} className={classString} />
   }
 }
 
