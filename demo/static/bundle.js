@@ -5431,7 +5431,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'close', size: 'md' })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'close', size: 'md', color: '#6abf47' })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
@@ -5508,10 +5508,13 @@ var Icon = function (_Component) {
           prefixCls = _props.prefixCls;
 
       var classString = __WEBPACK_IMPORTED_MODULE_1_classnames___default()((_classnames = {
-        'iconfont': true
-      }, _defineProperty(_classnames, prefixCls + '-' + type, true), _defineProperty(_classnames, prefixCls + '-' + color, true), _defineProperty(_classnames, prefixCls + '-' + size, true), _classnames), className);
+        'iconfont': true,
+        'cefc-icon': true
+      }, _defineProperty(_classnames, prefixCls + '-' + type, true), _defineProperty(_classnames, prefixCls + '-' + size, true), _classnames), className);
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { onClick: this.props.onClick, className: classString });
+      var style = { color: color };
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { onClick: this.props.onClick, className: classString, style: style });
     }
   }]);
 
@@ -5522,14 +5525,13 @@ Icon.propTypes = {
   prefixCls: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string, //样式前缀
   type: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired, //icon类型
   onClick: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.func,
-  color: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['blue', 'white']),
+  color: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
   size: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['sm', 'md', 'lg']),
   className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string //外部传入类
 };
 Icon.defaultProps = {
   prefixCls: 'cefc-icon',
   className: '',
-  color: 'blue',
   size: 'md',
   onClick: function onClick() {}
 };
@@ -6179,10 +6181,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(32)();
 // imports
-exports.push([module.i, "@import url(//at.alicdn.com/t/font_501801_05e3slvbzo0kvs4i.css);", ""]);
+exports.push([module.i, "@import url(//at.alicdn.com/t/font_501801_hs2m4lu80fz85mi.css);", ""]);
 
 // module
-exports.push([module.i, ".cefc-icon-blue{color:#45a6ec}.cefc-icon-white{color:#fff}.cefc-icon-sm{font-size:.22rem}.cefc-icon-md{font-size:.24rem}.cefc-icon-lg{font-size:.26rem}", ""]);
+exports.push([module.i, ".cefc-icon{color:#45a6ec}.cefc-icon-sm{font-size:.22rem}.cefc-icon-md{font-size:.24rem}.cefc-icon-lg{font-size:.26rem}", ""]);
 
 // exports
 

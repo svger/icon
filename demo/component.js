@@ -13,7 +13,7 @@ class App extends React.Component {
              <Icon type="add" color="blue" size="sm" />
            </li>
            <li>
-             <Icon type="close" size="md"/>
+             <Icon type="close" size="md" color="#6abf47"/>
            </li>
            <li>
              <Icon type="search" size="lg"/>
@@ -26,7 +26,6 @@ class App extends React.Component {
            </li>
          </ul>
        </div>
-
     );
   }
 }

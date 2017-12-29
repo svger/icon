@@ -8,7 +8,7 @@ class Icon extends Component {
     prefixCls: PropTypes.string,        //样式前缀
     type: PropTypes.string.isRequired,  //icon类型
     onClick: PropTypes.func,
-    color: PropTypes.oneOf(['blue', 'white']),
+    color: PropTypes.string,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     className: PropTypes.string,        //外部传入类
   }
@@ -16,7 +16,6 @@ class Icon extends Component {
   static defaultProps = {
     prefixCls: 'cefc-icon',
     className: '',
-    color: 'blue',
     size: 'md',
     onClick: () => {}
   }
@@ -25,12 +24,14 @@ class Icon extends Component {
     const { type, className, color, size, prefixCls } = this.props;
     const classString = classnames({
       'iconfont': true,
+      'cefc-icon': true,
       [`${prefixCls}-${type}`]: true,
-      [`${prefixCls}-${color}`]: true,
       [`${prefixCls}-${size}`]: true
     }, className);
 
-    return <i onClick={this.props.onClick} className={classString} />
+    const style = { color };
+
+    return <i onClick={this.props.onClick} className={classString} style={style} />
   }
 }
 
