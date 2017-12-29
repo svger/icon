@@ -10,7 +10,7 @@ class App extends React.Component {
 
          <ul>
            <li>
-             <Icon type="add" color="blue" size="sm" />
+             <Icon type="loading" color="blue" size="sm" spining/>
            </li>
            <li>
              <Icon type="close" size="md" color="#6abf47"/>

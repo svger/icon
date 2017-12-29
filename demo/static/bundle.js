@@ -5426,7 +5426,7 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'add', color: 'blue', size: 'sm' })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src_index__["a" /* default */], { type: 'loading', color: 'blue', size: 'sm', spining: true })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
@@ -5505,12 +5505,13 @@ var Icon = function (_Component) {
           className = _props.className,
           color = _props.color,
           size = _props.size,
-          prefixCls = _props.prefixCls;
+          prefixCls = _props.prefixCls,
+          spining = _props.spining;
 
       var classString = __WEBPACK_IMPORTED_MODULE_1_classnames___default()((_classnames = {
         'iconfont': true,
         'cefc-icon': true
-      }, _defineProperty(_classnames, prefixCls + '-' + type, true), _defineProperty(_classnames, prefixCls + '-' + size, true), _classnames), className);
+      }, _defineProperty(_classnames, prefixCls + '-' + type, true), _defineProperty(_classnames, prefixCls + '-' + size, true), _defineProperty(_classnames, prefixCls + '-spining', spining), _classnames), className);
 
       var style = { color: color };
 
@@ -5527,12 +5528,14 @@ Icon.propTypes = {
   onClick: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.func,
   color: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
   size: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOf(['sm', 'md', 'lg']),
-  className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string //外部传入类
+  className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string, //外部传入类
+  spining: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool //图标是否旋转
 };
 Icon.defaultProps = {
   prefixCls: 'cefc-icon',
   className: '',
   size: 'md',
+  spining: false,
   onClick: function onClick() {}
 };
 
@@ -6184,7 +6187,7 @@ exports = module.exports = __webpack_require__(32)();
 exports.push([module.i, "@import url(//at.alicdn.com/t/font_501801_hs2m4lu80fz85mi.css);", ""]);
 
 // module
-exports.push([module.i, ".cefc-icon{color:#45a6ec}.cefc-icon-sm{font-size:.22rem}.cefc-icon-md{font-size:.24rem}.cefc-icon-lg{font-size:.26rem}", ""]);
+exports.push([module.i, ".cefc-icon{color:#45a6ec}.cefc-icon-sm{font-size:.22rem}.cefc-icon-md{font-size:.24rem}.cefc-icon-lg{font-size:.26rem}.cefc-icon-spining:before{display:inline-block;-webkit-animation:spin 3s linear infinite;animation:spin 3s linear infinite}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}", ""]);
 
 // exports
 
