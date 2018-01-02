@@ -11,25 +11,22 @@ class Icon extends Component {
     color: PropTypes.string,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     className: PropTypes.string,        //外部传入类
-    spinning: PropTypes.bool             //图标是否旋转
   }
 
   static defaultProps = {
     prefixCls: 'cefc-icon',
     className: '',
     size: 'md',
-    spinning: false,
     onClick: () => {}
   }
 
   render() {
-    const { type, className, color, size, prefixCls, spinning } = this.props;
+    const { type, className, color, size, prefixCls } = this.props;
     const classString = classnames({
       'iconfont': true,
       'cefc-icon': true,
       [`${prefixCls}-${type}`]: true,
       [`${prefixCls}-${size}`]: true,
-      [`${prefixCls}-spinning`]: spinning
     }, className);
 
     const style = { color };

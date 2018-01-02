@@ -14,13 +14,12 @@
 |color|图标颜色，可以传入任意表示颜色的字符串，如'blue', '#FFF', 'rgb(0,0,0)'|string|无|
 |size|常用的图标大小|目前有sm,md,lg三个值|string|md|
 |onClick|点击图标的回调函数|func|()=>{}|
-|spining|图标是否旋转|bool|false|
 
 ## 如何使用
 使用 `<Icon />` 标签声明组件，指定图标对应的 type 属性，示例代码如下:
 
 ``` html
-<Icon type="loading" color="blue" size="sm" spining/>
+<Icon type="loading" color="blue" size="sm"/>
 <Icon type="close" size="md" color="#6abf47"/>
 <Icon type="search" size="lg"/>
 <Icon type="setup" className="biggerIcon"/>
